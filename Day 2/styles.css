@@ -1,0 +1,141 @@
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #10ad79;
+  color: #333;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.center:hover {
+  cursor: pointer;
+}
+
+.bar {
+  height: 8px;
+  background: white;
+  width: 80px;
+  border-radius: 16px;
+  box-shadow: rgb(119, 119, 119) 0px 2px 7px;
+}
+
+.active > .bar-one {
+  animation: barOne 0.7s;
+  animation-fill-mode: forwards;
+}
+
+.notActive > .bar-one {
+  animation: barOneReverse 0.7s;
+  animation-fill-mode: forwards;
+}
+
+.active > .bar-two {
+  animation: barTwo 0.7s;
+  animation-fill-mode: forwards;
+}
+
+.notActive > .bar-two {
+  animation: barTwoReverse 0.7s;
+  animation-fill-mode: forwards;
+}
+
+.active > .bar-three {
+  animation: barTree 0.7s;
+  animation-fill-mode: forwards;
+}
+
+.notActive > .bar-three {
+  animation: barTreeReverse 0.7s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes barTwo {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 0;
+  }
+  100% {
+    scale: 0;
+  }
+}
+
+@keyframes barTwoReverse {
+  0% {
+    scale: 0;
+  }
+  50% {
+    scale: 0;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+@keyframes barOne {
+  0% {
+    transform: translate(0, 0) rotate(0);
+  }
+  50% {
+    transform: translate(0, 20px) rotate(0);
+  }
+  100% {
+    transform: translate(0, 20px) rotate(45deg);
+  }
+}
+
+@keyframes barOneReverse {
+  0% {
+    transform: translate(0, 20px) rotate(45deg);
+  }
+  50% {
+    transform: translate(0, 20px) rotate(0);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0);
+  }
+}
+
+@keyframes barTree {
+  0% {
+    transform: translate(0, 0) rotate(0);
+  }
+  50% {
+    transform: translate(0, -21px) rotate(0);
+  }
+  100% {
+    transform: translate(0, -21px) rotate(135deg);
+  }
+}
+
+@keyframes barTreeReverse {
+  0% {
+    transform: translate(0, -21px) rotate(135deg);
+  }
+  50% {
+    transform: translate(0, -21px) rotate(0);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0);
+  }
+}
