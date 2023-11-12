@@ -1,0 +1,176 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+  box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background: #000;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.circle {
+  background-color: rgb(112, 232, 253);
+  border-radius: 100%;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  animation: show 4s infinite;
+}
+
+.sun {
+  background-color: yellow;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  top: 117px;
+  left: 78px;
+  animation: sunMoving 4s infinite;
+}
+
+.pyramid {
+  position: relative;
+  top: 30px;
+  left: 40px;
+  display: flex;
+}
+
+.pyramid-left {
+  display: inline-block;
+  height: 0;
+  width: 0;
+  border-right: 24px solid transparent;
+  border-bottom: 58px solid white;
+  border-left: 56px solid transparent;
+  z-index: 2;
+  animation: pyramidLeft 4s infinite;
+}
+
+.pyramid-right {
+  display: inline-block;
+  height: 0;
+  width: 0;
+  width: 0;
+  height: 0;
+  border-right: 73px solid transparent;
+  border-bottom: 61px solid rgb(197, 197, 197);
+  transform: translateX(-24px);
+  z-index: 1;
+  animation: pyramidRight 4s infinite;
+}
+
+.pyramid-shadow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-right: 392px solid transparent;
+  border-bottom: 20px solid rgba(0, 0, 0, 0.24);
+  border-left: 111px solid transparent;
+  transform-origin: 50% 0%;
+  clip-path: polygon(115px 0%, 231px 0%, 80% 100%);
+  top: 118px;
+  left: -72px;
+  z-index: 4;
+  transform: rotate(349deg);
+  animation: shadowAnimation 4s infinite;
+}
+
+.sand {
+  position: relative;
+  top: 25px;
+  left: 0;
+  right: 0;
+  background-color: rgb(226, 226, 140);
+  height: 100px;
+  z-index: 3;
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes pyramidLeft {
+  0% {
+    border-bottom-color: white;
+  }
+  60% {
+    border-bottom-color: white;
+  }
+  100% {
+    border-bottom-color: rgb(197, 197, 197);
+  }
+}
+
+@keyframes pyramidRight {
+  0% {
+    border-bottom-color: rgb(197, 197, 197);
+  }
+  60% {
+    border-bottom-color: rgb(197, 197, 197);
+  }
+  100% {
+    border-bottom-color: white;
+  }
+}
+
+@keyframes sunMoving {
+  0% {
+    transform: rotate(0deg) translate(-108px) rotate(0deg);
+  }
+  20% {
+    transform: rotate(54deg) translate(-109px) rotate(-36deg);
+  }
+  100% {
+    transform: rotate(186deg) translate(-121px) rotate(108deg);
+  }
+}
+
+@keyframes shadowAnimation {
+  0% {
+    transform: scaleY(0);
+    clip-path: polygon(115px 0%, 231px 0%, 100% 100%);
+  }
+
+  50% {
+    transform: scaleY(1.7);
+    transform: rotate(356deg);
+  }
+
+  70% {
+    transform: scaleY(2);
+    transform: rotate(357deg);
+  }
+
+  100% {
+    transform: scaleY(0);
+    clip-path: polygon(115px 0%, 231px 0%, 0% 100%);
+    transform: rotate(357deg);
+  }
+}
