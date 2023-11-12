@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>100 days of CSS demo</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body></body>
+  <script type="module">
+    // Use Preact standalone library
+    import {
+      h,
+      render,
+    } from "https://unpkg.com/preact@10.5.10/dist/preact.module.js";
+
+    function Codepen({ url }) {
+      return h("iframe", {
+        height: "400",
+        style: "width: 100%;",
+        scrolling: "no",
+        title: "Day 3 CSS Challenge",
+        src: `https://codepen.io/nina-alin/embed/${url}?default-tab=html%2Cresult`,
+        frameborder: "no",
+        loading: "lazy",
+        allowtransparency: "true",
+        allowfullscreen: "true",
+        children: [
+          "See the Pen ",
+          h(
+            "a",
+            { href: `https://codepen.io/nina-alin/pen/${url}` },
+            "Day 3 CSS Challenge"
+          ),
+          " by Nina Alin (",
+          h("a", { href: "https://codepen.io/nina-alin" }, "@nina-alin"),
+          ") on ",
+          h("a", { href: "https://codepen.io" }, "CodePen"),
+          ".",
+        ],
+      });
+    }
+
+    const challenges = [
+      {
+        url: "OJdmGRN",
+      },
+      {
+        url: "WNPOwLP",
+      },
+      {
+        url: "XWOgexJ",
+      },
+    ];
+
+    function App({ challenges }) {
+      return h(
+        "div",
+        null,
+        challenges.map((challenge) => h(Codepen, { url: challenge.url }))
+      );
+    }
+
+    render(h(App, { challenges }), document.body);
+  </script>
+</html>
