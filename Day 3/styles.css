@@ -120,24 +120,30 @@
   0% {
     border-bottom-color: white;
   }
-  60% {
-    border-bottom-color: white;
+ 40% {
+    border-bottom-color: rgb(222, 222, 222);
   }
-  100% {
+  70% {
     border-bottom-color: rgb(197, 197, 197);
   }
+	100% {
+		 border-bottom-color: rgb(197, 197, 197);
+	}
 }
 
 @keyframes pyramidRight {
   0% {
     border-bottom-color: rgb(197, 197, 197);
   }
-  60% {
-    border-bottom-color: rgb(197, 197, 197);
+  40% {
+    border-bottom-color: rgb(222, 222, 222);
   }
-  100% {
+  70% {
     border-bottom-color: white;
   }
+	100% {
+		 border-bottom-color: white;
+	}
 }
 
 @keyframes sunMoving {
